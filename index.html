@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <title>PULSE — Swipe Deck</title>
 
 <!-- Fonts -->
@@ -21,8 +21,8 @@
 <style>
   :root { --pink:#FF007F; --cyan:#00E5FF; }
   * { -webkit-tap-highlight-color: transparent; }
-  html, body { margin:0; height:100%; background:#000; overscroll-behavior:none; }
-  body { font-family:'Inter', system-ui, sans-serif; color:#fff; }
+  html, body { margin:0; padding:0; height:100%; width:100%; background:#000; overflow:hidden; overscroll-behavior:none; }
+  body { position:fixed; inset:0; font-family:'Inter', system-ui, sans-serif; color:#fff; }
   #root { height:100%; }
   .font-display { font-family:'Space Grotesk','Inter',sans-serif; }
 
@@ -1232,7 +1232,7 @@
       const homeActive = tab === "home" && !matchProfile && !detailProfile;
 
       return (
-        <div className="relative z-10 mx-auto flex h-screen h-[100dvh] w-full max-w-[440px] flex-col overflow-hidden">
+        <div className="fixed inset-0 z-10 mx-auto flex w-full max-w-[440px] flex-col overflow-hidden">
           {!hideChrome && (
             <header className="flex shrink-0 items-center justify-center gap-2 pt-5 pb-2.5">
               <PulseLogo />
