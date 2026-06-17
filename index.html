@@ -1024,30 +1024,27 @@
               <InfoRow label="Phone" value="+972 50-000-0000" />
               <InfoRow label="Email" value="alex@email.com" />
             </SettingsGroup>
-            <SettingsGroup title="Discovery">
+            <SettingsGroup title="Preferences">
               <div className="px-4 py-3.5">
                 <div className="mb-2 text-[15px]">Show me</div>
                 <Segmented options={["Women", "Men", "Everyone"]} value={s.showMe} onChange={(v) => set("showMe", v)} />
               </div>
               <div className="px-4 py-3.5">
-                <div className="mb-1 flex items-center justify-between"><span className="text-[15px]">Maximum distance</span><span className="text-sm text-[#FF007F]">{s.distance} km</span></div>
-                <RangeSingle min={1} max={100} value={s.distance} onChange={(v) => set("distance", v)} />
-              </div>
-              <div className="px-4 py-3.5">
                 <div className="mb-1 flex items-center justify-between"><span className="text-[15px]">Age range</span><span className="text-sm text-[#FF007F]">{s.ageRange[0]} – {s.ageRange[1]}</span></div>
                 <RangeDual min={18} max={60} value={s.ageRange} onChange={(v) => set("ageRange", v)} />
               </div>
-              <ToggleRow label="Global" desc="See people around the world" on={s.global} onChange={(v) => set("global", v)} />
             </SettingsGroup>
-            <SettingsGroup title="Privacy">
-              <ToggleRow label="Show my distance" on={s.showDistance} onChange={(v) => set("showDistance", v)} />
-              <ToggleRow label="Show my age" on={s.showAge} onChange={(v) => set("showAge", v)} />
-              <ToggleRow label="Incognito mode" desc="Only people you like can see you" on={s.incognito} onChange={(v) => set("incognito", v)} />
+            <SettingsGroup title="Data & privacy">
+              <button className="flex w-full items-center px-4 py-3.5 text-left hover:bg-white/5">
+                <div className="flex-1"><div className="text-[15px]">Clear chat history</div><div className="mt-0.5 text-xs text-white/45">Erase all conversations and memory</div></div>
+              </button>
+              <button className="flex w-full items-center px-4 py-3.5 text-left hover:bg-red-500/10">
+                <span className="flex-1 text-[15px] text-red-400">Delete account</span>
+              </button>
             </SettingsGroup>
             <div className="mt-6 space-y-2">
               <button className="w-full rounded-2xl border border-white/10 py-3 text-sm font-semibold text-white/70 hover:bg-white/5">Restore purchases</button>
               <button className="w-full rounded-2xl border border-white/10 py-3 text-sm font-semibold text-white/60 hover:bg-white/5">Log out</button>
-              <button className="w-full rounded-2xl border border-red-500/30 py-3 text-sm font-semibold text-red-400 hover:bg-red-500/10">Delete account</button>
             </div>
             <p className="mt-4 text-center text-xs text-white/25">Your AI Babe · v1.0</p>
           </div>
